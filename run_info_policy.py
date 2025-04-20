@@ -16,7 +16,7 @@ env = make_atari_env(env_id, n_envs=n_envs, seed=0)
 env = VecFrameStack(env, n_stack=4)
 
 # Initialize the A2C model with the custom policy
-model = A2C(ActorCriticInformationCnnPolicy, env, verbose=1)
+model = A2C('ActorCriticInformationCnnPolicy', env, verbose=1)
 
 # Train the agent
 model.learn(total_timesteps=20_000)
